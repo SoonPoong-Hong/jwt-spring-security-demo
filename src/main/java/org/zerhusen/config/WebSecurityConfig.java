@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     // Custom JWT based security filter
     @Autowired
-    JwtAuthorizationTokenFilter authenticationTokenFilter;
+    private JwtAuthorizationTokenFilter authenticationTokenFilter;
 
     @Value("${jwt.header}")
     private String tokenHeader;
