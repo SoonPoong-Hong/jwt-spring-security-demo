@@ -29,4 +29,10 @@ public class PersonRestService {
                 .filter(person -> name.equalsIgnoreCase(person.getName()))
                 .findAny().orElse(null);
     }
+    
+    
+    class Dummy{
+    	public String name = "Hong";
+    	public int age = 33; 
+    }
 }
