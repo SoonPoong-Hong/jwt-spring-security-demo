@@ -1,12 +1,13 @@
 package org.zerhusen.rest;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 public class PersonRestService {
@@ -28,5 +29,15 @@ public class PersonRestService {
         return persons.stream()
                 .filter(person -> name.equalsIgnoreCase(person.getName()))
                 .findAny().orElse(null);
+    }
+    
+    @GetMapping("/everyone")
+    public Dummy dummy() {
+    	return new Dummy();
+    }
+    
+    class Dummy{
+    	public String name = "Hong";
+    	public int age = 33; 
     }
 }
